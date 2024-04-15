@@ -1,0 +1,37 @@
+	AREA RESET, DATA, READONLY
+	EXPORT __Vectors
+__Vectors
+	DCD 0x40001000
+	DCD Reset_Handler
+	ALIGN
+	AREA mycode, CODE, READONLY
+ENTRY
+	EXPORT Reset_Handler
+Reset_Handler
+	LDR R3,=DST
+	LDR R0,=SRC
+	LDRB R1,[R0]
+	LDRB R2,[R0,#1]
+	LDRB R11,[R0,#2]
+	LDRB R4,[R0,#3]
+	LDRB R5,[R0,#4]
+	LDRB R6,[R0,#5]
+	LDRB R7,[R0,#6]
+	LDRB R8,[R0,#7]
+	LDRB R9,[R0,#8]
+	LDRB R10,[R0,#9]
+	
+	STRB R1,[R3]
+	STRB R2,[R3,#1]
+	STRB R11,[R3,#2]
+	STRB R4,[R3,#3]
+	STRB R5,[R3,#4]
+	STRB R6,[R3,#5]
+	STRB R7,[R3,#6]
+	STRB R8,[R3,#7]
+	STRB R9,[R3,#8]
+	STRB R10,[R3,#9]
+SRC DCB 0x78, 0x12, 0xBB, 0x65, 0x17, 0x87, 0x12, 0x65, 0x17, 0x74
+	AREA mydata, DATA, READWRITE
+DST DCB 0x0
+	END
