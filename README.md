@@ -1,2 +1,2 @@
-# Manipal-MIT-AT-IT-Labs
-This contains all the lab codes of android development during the sixth semester of MIT, Manipal. 
+# SoundSphere
+"SoundSphere" is an android application designed for music enthusiasts to enjoy a wide variety of songs with advanced functionalities. Whether you're looking to discover new music, create playlists, or customize your listening experience, SoundSphere has it all.
