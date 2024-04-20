@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
 
@@ -16,7 +17,7 @@ class PlayActivity : AppCompatActivity() {
     lateinit var seekBar: SeekBar
     lateinit var back: Button
     lateinit var musicname: TextView
-
+    lateinit var imageView: ImageView
     private var mp: MediaPlayer? = null
     private var currentSongId = 0
 
@@ -30,10 +31,11 @@ class PlayActivity : AppCompatActivity() {
         seekBar = findViewById(R.id.seekbar)
         back = findViewById(R.id.back)
         musicname = findViewById(R.id.musicname)
-
+        imageView = findViewById(R.id.imageView)
         val music = intent.getStringExtra("music")
         musicname.text = music
         currentSongId = getSongId(music)
+        imageView.setImageResource(getImageResource(music))
 
         controlSound(currentSongId)
 
@@ -44,11 +46,37 @@ class PlayActivity : AppCompatActivity() {
 
     private fun getSongId(music: String?): Int {
         return when (music) {
-            "Sunflower" -> R.raw.sunflower
+            "Awaken" -> R.raw.awaken
             "Happy" -> R.raw.happy
-            "Rock" -> R.raw.rock
+            "Movement" -> R.raw.movement
+            "Order" -> R.raw.order
             "Pop" -> R.raw.pop
+            "Rock" -> R.raw.rock
+            "Separation" -> R.raw.separation
+            "Smoke" -> R.raw.smoke
+            "Sunflower" -> R.raw.sunflower
+            "Titanium" -> R.raw.titanium
+            "Waterfall" -> R.raw.waterfall
+
+
             else -> R.raw.sunflower // Default to Sunflower if music not recognized
+        }
+    }
+
+    private fun getImageResource(music: String?): Int {
+        return when (music) {
+            "Awaken" -> R.drawable.awaken
+            "Happy" -> R.drawable.happy
+            "Movement" -> R.drawable.movement
+            "Order" -> R.drawable.order
+            "Pop" -> R.drawable.pop
+            "Rock" -> R.drawable.rock
+            "Separation" -> R.drawable.separation
+            "Smoke" -> R.drawable.smoke
+            "Sunflower" -> R.drawable.sunflower
+            "Titanium" -> R.drawable.titanium
+            "Waterfall" -> R.drawable.waterfall
+            else -> R.drawable.img // Default image
         }
     }
 

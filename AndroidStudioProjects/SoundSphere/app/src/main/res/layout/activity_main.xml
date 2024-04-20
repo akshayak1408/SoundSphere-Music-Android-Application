@@ -1,4 +1,3 @@
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -16,6 +15,19 @@
         android:textColor="#FFFFFF"
         android:textSize="40sp"
         android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_text_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search for music"
+        android:textColorHint="#CCCCCC"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:imeActionLabel="Search"
+        android:imeActionId="101"/>
 
     <ListView
         android:id="@+id/list_view_music_options"
