@@ -12,6 +12,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var searchEditText: EditText
     private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var create_playlist: Button
+    private lateinit var spinnerChoosePlaylist: Spinner
+    private val playlists = arrayOf("My Playlist 1", "My Playlist 2", "My Playlist 3")
 
     private val allMusicOptions = arrayOf(
         "Awaken",
@@ -35,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         listView = findViewById(R.id.list_view_music_options)
         searchEditText = findViewById(R.id.edit_text_search)
+        create_playlist = findViewById(R.id.btn_create_playlist)
 
         filteredMusicOptions.addAll(allMusicOptions)
 
@@ -54,6 +58,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("music", selectedOption)
             startActivity(intent)
         }
+        spinnerChoosePlaylist = findViewById(R.id.spinner_choose_playlist)
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, playlists)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerChoosePlaylist.adapter = adapter
 
 
         searchEditText.addTextChangedListener(object : TextWatcher {
@@ -65,6 +74,11 @@ class MainActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {}
         })
+
+        create_playlist.setOnClickListener {
+            val intent = Intent(this, Playlist::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun filterMusicOptions(query: String) {

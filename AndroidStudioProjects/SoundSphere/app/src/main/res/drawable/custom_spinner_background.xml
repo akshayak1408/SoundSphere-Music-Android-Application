@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- custom_spinner_background.xml -->
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Default state -->
+    <item tools:ignore="StateListReachable">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!-- Background color for default state -->
+            <corners android:radius="8dp" /> <!-- Rounded corners -->
+            <padding android:left="8dp"
+                android:top="8dp"
+                android:right="8dp"
+                android:bottom="8dp" /> <!-- Padding -->
+        </shape>
+    </item>
+
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#E0E0E0" /> <!-- Background color when pressed -->
+            <corners android:radius="8dp" /> <!-- Rounded corners -->
+            <padding android:left="8dp"
+                android:top="8dp"
+                android:right="8dp"
+                android:bottom="8dp" /> <!-- Padding -->
+        </shape>
+    </item>
+
+</selector>

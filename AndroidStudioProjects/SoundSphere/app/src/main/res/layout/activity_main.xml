@@ -32,7 +32,44 @@
     <ListView
         android:id="@+id/list_view_music_options"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="600dp"
         android:clickable="true"
         android:focusable="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Spinner
+            android:id="@+id/spinner_choose_playlist"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1.99"
+            android:background="#B4B4B8"
+            android:backgroundTint="#6AFFFFFF"
+            android:contextClickable="true"
+            android:padding="8dp"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/btn_create_playlist"
+            android:layout_width="150dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="0.01"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/custom_button"
+            android:backgroundTint="#56952222"
+            android:onClick="openCreatePlaylistPage"
+            android:padding="10dp"
+            android:text="Create Playlist"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 </LinearLayout>

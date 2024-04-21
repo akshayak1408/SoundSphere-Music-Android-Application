@@ -1,0 +1,39 @@
+<!-- activity_create_playlist.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- EditText to input playlist name -->
+    <EditText
+        android:id="@+id/edit_text_playlist_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Playlist Name"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ListView to display music options -->
+    <ListView
+        android:id="@+id/list_view_music_selection"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="1dp"
+        android:choiceMode="multipleChoice" />
+
+    <!-- Button to add selected music to playlist -->
+    <Button
+        android:id="@+id/btn_add_to_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Add to Playlist"
+        android:textIsSelectable="false"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
